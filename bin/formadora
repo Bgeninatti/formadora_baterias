@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+
+""""Script to run the 'formadora': An utility to interact with the TKL688"""
+
+import os
+import sys
+
+from formadora import main
+
+sys.path.insert(0, os.getcwd())
+
+rc = main.go()
+
+sys.exit(rc)
