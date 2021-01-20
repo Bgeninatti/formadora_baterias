@@ -19,10 +19,8 @@ setuptools.setup(
     "Operating System :: OS Independent",
     ],
     install_requires=[
-    'Pillow',
-    'matplotlib',
-    'numpy',
-    'attrs'
+    'python-telegram-bot==12.2.0',
+    'pyzmq',
     ],
     python_requires='>=3.4',
     scripts=['bin/formadora'],
