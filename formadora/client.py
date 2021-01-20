@@ -99,56 +99,56 @@ class TKL688:
     @property
     def banderas(self):
         rta = self._get_data(
-            REQUIRED_PACKAGES['banderas'],
+            REQUIRED_PACKAGES['banderas']['package'],
         )
         return rta.data
 
     @property
     def temperatura_bateria(self):
         rta = self._get_data(
-            REQUIRED_PACKAGES['temperatura_bateria'],
+            REQUIRED_PACKAGES['temperatura_bateria']['package'],
         )
         return rta.data
 
     @property
     def set_corriente(self):
         rta = self._get_data(
-            REQUIRED_PACKAGES['set_corriente'],
+            REQUIRED_PACKAGES['set_corriente']['package'],
         )
         return rta.data
 
     @property
     def set_corriente_corregido(self):
         rta = self._get_data(
-            REQUIRED_PACKAGES['set_corriente_corregido'],
+            REQUIRED_PACKAGES['set_corriente_corregido']['package'],
         )
         return rta.data
 
     @property
     def corriente_control(self):
         rta = self._get_data(
-            REQUIRED_PACKAGES['corriente_control'],
+            REQUIRED_PACKAGES['corriente_control']['package'],
         )
         return rta.data
 
     @property
     def corriente_display(self):
         rta = self._get_data(
-            REQUIRED_PACKAGES['corriente_display'],
+            REQUIRED_PACKAGES['corriente_display']['package'],
         )
         return rta.data
 
     @property
     def carga_paso(self):
         rta = self._get_data(
-            REQUIRED_PACKAGES['carga_paso'],
+            REQUIRED_PACKAGES['carga_paso']['package'],
         )
         return rta.data
 
     @property
     def carga_total(self):
         rta = self._get_data(
-            REQUIRED_PACKAGES['carga_total'],
+            REQUIRED_PACKAGES['carga_total']['package'],
         )
         return rta.data
 
@@ -156,62 +156,55 @@ class TKL688:
     @property
     def set_carga_paso(self):
         rta = self._get_data(
-            REQUIRED_PACKAGES['set_carga_paso'],
+            REQUIRED_PACKAGES['set_carga_paso']['package'],
         )
         return rta.data
     @property
     def maquina_estado(self):
         rta = self._get_data(
-            REQUIRED_PACKAGES['maquina_estado'],
+            REQUIRED_PACKAGES['maquina_estado']['package'],
         )
         return rta.data
 
     @property
     def paso_actual(self):
         rta = self._get_data(
-            REQUIRED_PACKAGES['paso_actual'],
+            REQUIRED_PACKAGES['paso_actual']['package'],
         )
         return rta.data
 
     @property
     def set_carga(self):
         rta = self._get_data(
-            REQUIRED_PACKAGES['set_carga'],
+            REQUIRED_PACKAGES['set_carga']['package'],
         )
         return rta.data
 
     @property
     def temperatura_inferior(self):
         rta = self._get_data(
-            REQUIRED_PACKAGES['temperatura_inferior'],
+            REQUIRED_PACKAGES['temperatura_inferior']['package'],
         )
         return rta.data
 
     @property
     def temperatura_superior(self):
         rta = self._get_data(
-            REQUIRED_PACKAGES['temperatura_superior'],
+            REQUIRED_PACKAGES['temperatura_superior']['package'],
         )
         return rta.data
 
     @property
     def temperatra_disipador(self):
         rta = self._get_data(
-            REQUIRED_PACKAGES['temperatra_disipador'],
+            REQUIRED_PACKAGES['temperatra_disipador']['package'],
         )
         return rta.data
 
     @property
     def identificacion(self):
         rta = self._get_data(
-            REQUIRED_PACKAGES['identificacion'],
-        )
-        return rta.data
-
-    @property
-    def banderas(self):
-        rta = self._get_data(
-            REQUIRED_PACKAGES[''],
+            REQUIRED_PACKAGES['identificacion']['package'],
         )
         return rta.data
 
