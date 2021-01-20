@@ -1,0 +1,33 @@
+;
+; Estructura de datos de formadora de bateria
+;
+Banderas del Sistema:			00
+Temperatura de Bateria: 		01
+SET de Corriente /10:			02
+SET de Corriente corregido /10: 	03
+Corriente para control: 		04
+Corriente en display /10:		05
+Carga del PASO: 			06L 07H
+Carga TOTAL:				08L 09H
+SET Carga del PASO:			0AL 0BH
+Maquina de estado:			0C
+Paso actual:				0D
+SET de corriente /10 (paso actual):	0E
+SET de carga x5 (paso actual):		0F
+Temperatura Inferior (paso actual):	10
+Temperatura Superior (paso actual):	11
+Temperatura de Disipador:		12
+;
+; Interesan para el Bot
+;
+Corriente en display /10:		05
+Carga del PASO: 			06L 07H
+Carga TOTAL:				08L 09H
+Paso actual:				0D
+SET de corriente /10 (paso actual):	0E
+SET de carga x5 (paso actual):		0F
+Temperatura Inferior (paso actual):	10
+Temperatura Superior (paso actual):	11
+Temperatura de Bateria: 		01
+Temperatura de Disipador:		12
+
