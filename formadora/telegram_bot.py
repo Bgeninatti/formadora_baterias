@@ -1,14 +1,19 @@
 # -*- coding: utf-8 -*-
 import zmq
-from telegram.ext import Updater, CommandHandler, MessageHandler, ConversationHandler, Job, Filters
+from telegram.ext import (CommandHandler, ConversationHandler, Filters, Job,
+                          MessageHandler, Updater)
+
+from .logger import get_logger
+
+logger = get_logger(__name__)
 
 
-class TorreSprayBot(object):
+class TKLBot(object):
 
     def __init__(self,
-                 spray,
+                 client,
                  bot_key):
-        self._spray = spray
+        self._client = client
         self._updater = Updater(bot_key, use_context=True)
         self._dp = self._updater.dispatcher
 
