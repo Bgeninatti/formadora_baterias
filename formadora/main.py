@@ -28,7 +28,7 @@ def go():
     config = load_config(args.config_file)
 
     if args.version:
-        sys.stdout.write(f"Formadora {__version__}")
+        sys.stdout.write("Formadora {}".format(__version__))
         return 0
 
     client = TKL688(ip=config['DEFAULT']['RaspiIp'])
@@ -38,5 +38,5 @@ def go():
             bot_key=config['DEFAULT']['TelegramToken'],
         )
         bot.run()
-
-    print(client)
+    else:
+        print(client)

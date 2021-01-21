@@ -78,6 +78,14 @@ REQUIRED_PACKAGES = {
 }
 
 
+def as_int(value):
+    return struct.unpack('B', value)[0]
+
+
+def as_short(value):
+    return struct.unpack('H', value)[0]
+
+
 class TKL688:
 
     def __init__(self, ip, timeout=5):
@@ -101,116 +109,116 @@ class TKL688:
         rta = self._get_data(
             REQUIRED_PACKAGES['banderas']['package'],
         )
-        return rta.data
+        return binascii.hexlify(rta)
 
     @property
     def temperatura_bateria(self):
         rta = self._get_data(
             REQUIRED_PACKAGES['temperatura_bateria']['package'],
         )
-        return rta.data
+        return as_int(rta)
 
     @property
     def set_corriente(self):
         rta = self._get_data(
             REQUIRED_PACKAGES['set_corriente']['package'],
         )
-        return rta.data
+        return as_int(rta) / 10.0
 
     @property
     def set_corriente_corregido(self):
         rta = self._get_data(
             REQUIRED_PACKAGES['set_corriente_corregido']['package'],
         )
-        return rta.data
+        return as_int(rta) / 10.0
 
     @property
     def corriente_control(self):
         rta = self._get_data(
             REQUIRED_PACKAGES['corriente_control']['package'],
         )
-        return rta.data
+        return as_int(rta)
 
     @property
     def corriente_display(self):
         rta = self._get_data(
             REQUIRED_PACKAGES['corriente_display']['package'],
         )
-        return rta.data
+        return as_int(rta) / 10.0
 
     @property
     def carga_paso(self):
         rta = self._get_data(
             REQUIRED_PACKAGES['carga_paso']['package'],
         )
-        return rta.data
+        return as_short(rta)
 
     @property
     def carga_total(self):
         rta = self._get_data(
             REQUIRED_PACKAGES['carga_total']['package'],
         )
-        return rta.data
-
+        return as_short(rta)
 
     @property
     def set_carga_paso(self):
         rta = self._get_data(
             REQUIRED_PACKAGES['set_carga_paso']['package'],
         )
-        return rta.data
+        return as_short(rta)
+
     @property
     def maquina_estado(self):
         rta = self._get_data(
             REQUIRED_PACKAGES['maquina_estado']['package'],
         )
-        return rta.data
+        return binascii.hexlify(rta)
 
     @property
     def paso_actual(self):
         rta = self._get_data(
             REQUIRED_PACKAGES['paso_actual']['package'],
         )
-        return rta.data
+        return as_int(rta)
 
     @property
     def set_carga(self):
         rta = self._get_data(
             REQUIRED_PACKAGES['set_carga']['package'],
         )
-        return rta.data
+        return as_int(rta) * 5.0
 
     @property
     def temperatura_inferior(self):
         rta = self._get_data(
             REQUIRED_PACKAGES['temperatura_inferior']['package'],
         )
-        return rta.data
+        return as_int(rta)
 
     @property
     def temperatura_superior(self):
         rta = self._get_data(
             REQUIRED_PACKAGES['temperatura_superior']['package'],
         )
-        return rta.data
+        return as_int(rta)
 
     @property
     def temperatra_disipador(self):
         rta = self._get_data(
             REQUIRED_PACKAGES['temperatra_disipador']['package'],
         )
-        return rta.data
+        return as_int(rta)
 
     @property
     def identificacion(self):
         rta = self._get_data(
             REQUIRED_PACKAGES['identificacion']['package'],
         )
-        return rta.data
+        return binascii.hexlify(rta)
 
     def __repr__(self):
         msg = ""
         for key in REQUIRED_PACKAGES:
             value = getattr(self, key)
-            msg += f"{key}: {value}\n"
+            msg += "{key}: {value}\n".format(key=key, value=value)
         return msg
