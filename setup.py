@@ -1,7 +1,5 @@
 import setuptools
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
 
 setuptools.setup(
     name="formadora-pkg-BGENINATTI", # Replace with your own username
@@ -9,8 +7,6 @@ setuptools.setup(
     author="Bruno Geninatti",
     author_email="brunogeninatti@gmail.com",
     description="Utility to interact with the TKL688",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
     url="https://bitbucket.org/tklrepo/formadora_baterias",
     packages=setuptools.find_packages(),
     classifiers=[
@@ -22,7 +18,6 @@ setuptools.setup(
     'python-telegram-bot==12.2.0',
     'pyzmq',
     ],
-    python_requires='>=3.4',
     scripts=['bin/formadora'],
 )
 
